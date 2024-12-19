@@ -1,5 +1,3 @@
-
-
 import re 
 import os 
 import sys
@@ -83,6 +81,3 @@ if __name__ == '__main__':
         print_strs(file_path, pattern)
     if args.set_comments:
         comment_script(file_path, pattern)
-
-
-

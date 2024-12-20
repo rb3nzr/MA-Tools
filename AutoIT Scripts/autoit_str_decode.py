@@ -4,12 +4,16 @@ import sys
 import argparse 
 
 """
+Script to decode strings in an .au3 script with the scheme in the below example:
+    Example: AMENDRANGES("89[82[70[68[69[88[79[68[85[92[35[35[35[35", 0x4 + 0xffffffff)
+    
 Example sample: 05d9a6b5ca04a3fb6392e36c27915575740e711991f2300cf31e82fa7b8cd5d0
-Example function call on encoded string: AMENDRANGES("89[82[70[68[69[88[79[68[85[92[35[35[35[35", 0x4 + 0xffffffff)
+
+This script will print the decoded strings and/or set comments and rewrite the .au3
 
 [!] Changes that will need to be made depending on the .au3 script:
     - The delimiter that splits the encoded strings ('[' is used here)
-    - The starting literal (name of the static string enc function) on the regex patterns (AMENDRANGES is used here)
+    - The starting literal (name of the function) on the regex patterns (AMENDRANGES is used here)
 """
 
 def decode_str(enc_str, val):

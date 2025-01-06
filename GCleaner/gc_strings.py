@@ -8,6 +8,12 @@ from capstone import *
 from capstone.x86 import *
 from colorama import Fore 
 
+# Tested on:
+# > packed:   1155d7ffbc9830d364310cf794b77f638df24218a4278b48754266dd8c50a823 2025-01-04
+# > unpacked: a883940150a872c5ac33249ca8523e75ee98f4ace0bf1ad17d9d16c7edd78f8c
+# > packed:   7e0f61d7f03f394f4dd1eaa7d5c9b19e0aa7e422a7527d3a345827473f123089 2025-01-02
+# > unpacked: 9a5a61de316d081f4ab63cb945d602ffada90aaea4ce0aa3b8fd99e664b496cf
+
 XOR_KEY = 0x2a
 
 def is_prologue(instruction):

@@ -243,7 +243,7 @@ if __name__ == '__main__':
                 res = dec_bytes.strip(b'\x00')
                 string_res.append(res)
     
-    print(Fore.MAGENTA + "==== IMM AM Loads ====")
+    print(Fore.MAGENTA + "==== XMM AM Loads ====")
     for i, st in enumerate(xmm_strings):
         print(Fore.CYAN + f"{st}")
 

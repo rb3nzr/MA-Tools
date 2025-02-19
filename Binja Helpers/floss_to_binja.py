@@ -4,7 +4,7 @@ from binaryninja import BinaryView
 # floss -j sample.exe > floss_out.json
 output_path = "/home/rb3nzr/Desktop/floss_out.json"
 
-# Just pulling from the decoded_strings array here
+# Just pulling from decoded_strings 
 def annotate_floss_output(output_path):
     with open(output_path, "r") as f:
         data = json.load(f)

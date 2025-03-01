@@ -14,7 +14,7 @@ function getWindowStyleFlags(style) {
         0x00040000: 'WS_THICKFRAME',
         0x00020000: 'WS_MINIMIZEBOX',
         0x00010000: 'WS_MAXIMIZEBOX',
-		0x00000001: 'WS_EX_DLGMODALFRAME',
+	0x00000001: 'WS_EX_DLGMODALFRAME',
         0x00000008: 'WS_EX_TOPMOST',
         0x00000040: 'WS_EX_TOOLWINDOW',
         0x00000100: 'WS_EX_WINDOWEDGE',
@@ -38,22 +38,22 @@ function getMessageName(msg) {
         0x0111: 'WM_COMMAND',
         0x0112: 'WM_HSCROLL',
         0x0113: 'WM_VSCROLL',
-		0x000C: "WM_SETTEXT",
+	0x000C: "WM_SETTEXT",
         0x000D: "WM_GETTEXT",
         0x000F: "WM_PAINT",
         0x0010: "WM_CLOSE",
         0x0100: "WM_KEYDOWN",
         0x0101: "WM_KEYUP",
         0x0102: "WM_CHAR",
-		0x0003: 'WM_MOVE',
-		0x0005: 'WM_SIZE',
-		0x0006: 'WM_ACTIVATE',
-		0x0018: 'WM_SHOWWINDOW',
-		0x0082: 'WM_NCCREATE',
-		0x00A0: 'WM_NCMOUSEMOVE',
-		0x011F: 'WM_CTLCOLOR',
-		0x0118: 'WM_SYSCOMMAND',
-		0x0400: 'WM_USER',
+	0x0003: 'WM_MOVE',
+	0x0005: 'WM_SIZE',
+	0x0006: 'WM_ACTIVATE',
+	0x0018: 'WM_SHOWWINDOW',
+	0x0082: 'WM_NCCREATE',
+	0x00A0: 'WM_NCMOUSEMOVE',
+	0x011F: 'WM_CTLCOLOR',
+	0x0118: 'WM_SYSCOMMAND',
+	0x0400: 'WM_USER',
         0x0081: 'WM_NCCREATE',
         0x0024: 'WM_GETMINMAXINFO',
         0x0083: 'WM_NCCALCSIZE',
@@ -213,10 +213,10 @@ Interceptor.attach(Module.getExportByName('user32.dll', 'RegisterClassW'), {
 
 Interceptor.attach(Module.getExportByName('user32.dll', 'CreateWindowExW'), {
     onEnter: function (args) {
-		log("\n----- [CreateWindowExW] -----");
-		if (!hWndParent.isNull()) {
-			log(` | hWndParent: ${args[8]} (${getWindowText(args[8])})`);
-		}
+	log("\n----- [CreateWindowExW] -----");
+	if (!hWndParent.isNull()) {
+		log(` | hWndParent: ${args[8]} (${getWindowText(args[8])})`);
+	}
         log(` | dwExStyle: ${args[0].toInt32().toString(16)}`);
         log(` | lpClassName: ${args[1].isNull() ? 'NULL' : args[1].readUtf16String()}`);
         log(` | lpWindowName: ${args[2].isNull() ? 'NULL' : args[2].readUtf16String()}`);
